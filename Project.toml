@@ -1,2 +1,7 @@
 [deps]
+DSP = "717857b8-e6f2-59f4-9121-6e50c889abd2"
 IJulia = "7073ff75-c697-5162-941a-fcdaad2a7d2a"
+PyPlot = "d330b81b-6aea-500a-939a-2ce795aea3ee"
+SampledSignals = "bd7594eb-a658-542f-9e75-4c4d8908c167"
+WAV = "8149f6b0-98f6-5db9-b78f-408fbbb8ef88"
+Waveforms = "cb13b1c6-351e-5134-b3ad-d6a530956a82"
