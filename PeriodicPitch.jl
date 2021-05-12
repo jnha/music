@@ -81,7 +81,7 @@ md"# Conclusion
 Any periodic waveform has a pitch (base frequency) and overtones that are multiples of that pitch.
 
 Sounds made with completely random waveforms are uncomfortably bright
-and can only be made conveniently at frequencies that are a multiple of $1/\text{fs}$.
+and can only be made conveniently at frequencies of $\text{fs}/n$ for integer $n$.
 however this experiment shows how the harmonic series gives the overtones of any arbitrary periodic signal,no matter how convoluted, as well as what conditions will give only odd harmonics. This shows why the sawtooth (all harmonics) and square wave (odd harmonics) are so useful as starting points for approximating a large class of pitched sounds, since they contain the same harmonics but at the wrong porportions.
 
 It's important to note that there are sounds with distinct pitches that aren't perfectly periodic, but contain multiple periodic signals whose periods don't line up to create a simple repeating pattern (i.e. frequencies that are irrational ratios to each other). Pitched drums provide important examples of these sorts of sounds.
