@@ -143,11 +143,11 @@ function poly3(t)
 	"""
 	b = 0
 	t = t/pi%2-1
-	x = t*(t*(t+b) - 1)
+	x = 3*sqrt(3)/2*t*(t*(t+b) - 1)
 end
 
 # ╔═╡ 6880cf94-23ee-4a96-8b9f-0417fc239374
-plot(t, 9/2/sqrt(3)*poly3.(t))
+plot(t, poly3.(t))
 
 # ╔═╡ e91b624c-cef9-4f74-8bf0-76a484c9c895
 poly3_tone = normalize(poly3.(freqs))
