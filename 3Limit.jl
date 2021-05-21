@@ -8,7 +8,7 @@ using InteractiveUtils
 using SampledSignals
 
 # ╔═╡ 99422a59-ffe4-4dc0-bb80-2245d41aaa74
-include("NoteNames.jl")
+include("definitions/NoteNames.jl")
 
 # ╔═╡ f3cf3e66-b414-11eb-129f-1f82995a6e8e
 md"# 3-Limit

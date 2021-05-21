@@ -1,3 +1,4 @@
 # Music Notebooks
 
-A collection of notebooks exploring music
+This is a collection of interactive music programming
+experiments written in julia using Pluto notebooks.
