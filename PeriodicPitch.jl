@@ -4,8 +4,17 @@
 using Markdown
 using InteractiveUtils
 
+# This Pluto notebook uses @bind for interactivity. When running this notebook outside of Pluto, the following 'mock version' of @bind gives bound variables a default value (instead of an error).
+macro bind(def, element)
+    quote
+        local el = $(esc(element))
+        global $(esc(def)) = Core.applicable(Base.get, el) ? Base.get(el) : missing
+        el
+    end
+end
+
 # ╔═╡ 93c3b8d4-b33e-11eb-335d-2b51a80e19df
-using FFTW, Plots, Random, SampledSignals
+using FFTW, Plots, PlutoUI, Random, SampledSignals
 
 # ╔═╡ 0b19c3d5-a429-4fd8-9636-fca0417139f9
 include("definitions/SoundPlots.jl")
@@ -37,7 +46,7 @@ plotfreqs(white1hz, "1 Hz repeated noise")
 # ╔═╡ 025f27c1-9dc6-4e7b-ae73-72a298ac93cc
 md"With a period of one second the sound is still noise.
 You may be able to hear artifacts at regular intervals.
-I've tried listening after regenerating the white noise
+I've listened to several random versions
 and it can be easier or harder to pick out the repetition
 depending on the particular sound generated. 
 
@@ -51,18 +60,18 @@ First at the frequency of the repetition,
 and with overtones at integer multiples of that frequency."
 
 # ╔═╡ fa4d47c8-6bea-4a57-a9e6-6809c3507b9e
-period = 120
+@bind period Slider(100:500:8100)
+
+# ╔═╡ ee695155-4cc7-45b6-8fae-fba482de61b1
+period
 
 # ╔═╡ f31f99a8-292e-4525-a6a6-8d0d39a5b088
 frequency = fs/period
 
-# ╔═╡ a4b1e0b8-3988-495c-b0ed-992ee2f8acac
-# repeat to fill one second of audio
-reps = fs ÷ period
-
 # ╔═╡ 67007aff-ffd1-4602-8768-80facb50221b
 # The sound has a distinct pitch
 begin
+   reps = fs ÷ period
    base = white[1:period]
    repeated = repeat(base, reps)
 end
@@ -75,7 +84,8 @@ md"There is no fall off in harmonics,
 their amplitude seems randomly distributed arround a flat value.
 I was suprised to see how clean the spectrum is
 despite using white noise as the base of the sound. 
-This demonstrates how the harmonic series is a fundamental feature of sounds that repeat at regular intervals."
+The frequency components of any periodic sound are integer multiples
+of the fundamental frequency, which is the inverse of the period."
 
 # ╔═╡ f642114c-5d34-4cf9-843d-35999d2f1587
 md"# Odd harmonics with periodic noise
@@ -106,11 +116,11 @@ plotfreqs(oddnoise, "Odd Noise Spectrum")
 # ╠═d297644a-27e1-4581-912f-e91f2ee28685
 # ╟─025f27c1-9dc6-4e7b-ae73-72a298ac93cc
 # ╠═fa4d47c8-6bea-4a57-a9e6-6809c3507b9e
+# ╠═ee695155-4cc7-45b6-8fae-fba482de61b1
 # ╠═f31f99a8-292e-4525-a6a6-8d0d39a5b088
-# ╠═a4b1e0b8-3988-495c-b0ed-992ee2f8acac
-# ╠═67007aff-ffd1-4602-8768-80facb50221b
+# ╟─67007aff-ffd1-4602-8768-80facb50221b
 # ╠═9b0fa656-52bc-45b8-8721-52ff8d01eb48
 # ╟─9fb202c3-620b-4490-9bfb-25feeda655ae
-# ╠═f642114c-5d34-4cf9-843d-35999d2f1587
+# ╟─f642114c-5d34-4cf9-843d-35999d2f1587
 # ╠═5c8e0d8e-b0a0-4fb6-b43f-41354a4e1ddc
 # ╠═8c2520cc-e6ad-48d3-bd94-6cb1b8999fed
