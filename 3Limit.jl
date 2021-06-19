@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.14.5
+# v0.14.7
 
 using Markdown
 using InteractiveUtils
@@ -34,7 +34,7 @@ end
 
 # ╔═╡ 752a031e-7c58-4af6-a2ab-965a1e43760e
 md"## Important intervals
-our important intervals are the octave, fifth, and fourth"
+our important intervals are the octave and the fifth"
 
 # ╔═╡ 8882303c-4ae7-44a5-8d38-8c4e73f15892
 # Octave
@@ -50,21 +50,10 @@ Using octaves and fifths it is possible to construct any interval
 that has integers made up of powers of $2$ and $3$: $2^n:3^m$ as a reduced ratio.
 There are infinitely many intervals, most of which aren't very consonant.
 
-### Tonality
-A music system is tonal if all its pitches are in relation to single note,
-the tonic.
-The general tonal 3-limit system has a tonic note,
-and includes all pitches that are a 3-limit interval from that note
+## 3-limit note names
+Using the concert pitch standard $A=440$ we can get a set of notes,
+one note for each 3-limit interval.
 
-### 3-limit note names
-Western music note names can be put in 1-1 correspondance with
-the general 3-limit system pitches where the tonic is the pitch standard.
-Starting with $A4=440$ as a pitch standard
-all octaves of $A$ are notated as equivalents
-or by their octave number (i.e. $A3$ is one octave below $A4$).
-The note names $A$ through $G$ are ordered by fifth as
-$F$ $C$ $G$ $D$ $A$ $E$ $B$. Then for more fifths after the note names are repeated with sharps, then double sharps. And for the earlier fifths flats then double flats.
-Note that in 3-limit tuning no notes are enharmonic unlike in 12-TET.
 "
 
 # ╔═╡ 799e0825-ac5c-46e5-a34a-685a5382cf63
@@ -342,10 +331,10 @@ sum(note.(freq) for freq in [B, E, 2*A, 2*D])/4
 # ╠═21ad163c-9031-4ebb-8dd2-a1a297f97456
 # ╠═5dedb960-1524-475b-b870-61a8254c7993
 # ╠═e0aff7b7-a355-4138-87cd-d5113ee82623
-# ╟─752a031e-7c58-4af6-a2ab-965a1e43760e
+# ╠═752a031e-7c58-4af6-a2ab-965a1e43760e
 # ╠═8882303c-4ae7-44a5-8d38-8c4e73f15892
 # ╠═87212fe7-ac94-4173-b3b6-a9afe58783ea
-# ╟─61482b04-b6fb-495a-94ae-92a84317f6f5
+# ╠═61482b04-b6fb-495a-94ae-92a84317f6f5
 # ╠═799e0825-ac5c-46e5-a34a-685a5382cf63
 # ╟─69e54625-9e7a-4a62-995d-ff4550e9167b
 # ╠═61f66f37-1568-4fb6-b0b0-ae6d13110c73
